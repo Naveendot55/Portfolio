@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Naveen Myana — Frontend Developer</title>
+  <title>Naveen Myana — MERN Stack Developer</title>
+  <meta name="description" content="Naveen Myana — MERN Stack Developer & Full-Stack Developer based in Hyderabad, India. Building end-to-end web applications with MongoDB, Express.js, React, and Node.js."/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cabinet+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -212,7 +213,7 @@
     .hero-tagline {
       font-size: 1.1rem;
       color: var(--muted);
-      max-width: 500px;
+      max-width: 540px;
       line-height: 1.7;
       margin-bottom: 3rem;
       animation: fadeUp 0.8s 0.2s both;
@@ -429,7 +430,7 @@
     /* ── SKILLS ── */
     #skills { background: var(--bg); }
     .skills-container { max-width: 1100px; }
-    .skills-categories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .skills-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     .skill-category {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -451,6 +452,7 @@
     }
     .skill-category:nth-child(2)::after { background: var(--accent2); }
     .skill-category:nth-child(3)::after { background: var(--accent3); }
+    .skill-category:nth-child(4)::after { background: #c084fc; }
     .skill-category:hover::after { transform: scaleX(1); }
     .skill-category:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-4px); }
     .skill-cat-title {
@@ -554,7 +556,26 @@
       color: var(--muted);
       font-size: 0.9rem;
       line-height: 1.7;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .project-features {
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+    }
+    .project-features li {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.8;
+      list-style: none;
+      position: relative;
+      padding-left: 1rem;
+    }
+    .project-features li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
     }
     .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
     .tech-pill {
@@ -585,8 +606,187 @@
       border-color: rgba(0,229,255,0.1);
     }
 
+    /* ── BACKEND APIs ── */
+    #apis {
+      background: var(--bg);
+    }
+    .api-container { max-width: 1100px; }
+    .api-terminal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .api-terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 1.5rem;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .terminal-dot.red { background: #ff5f57; }
+    .terminal-dot.yellow { background: #febc2e; }
+    .terminal-dot.green { background: #28c840; }
+    .api-terminal-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-left: 0.8rem;
+    }
+    .api-endpoints {
+      padding: 1.5rem;
+    }
+    .endpoint-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      transition: all .3s;
+      cursor: pointer;
+      background: rgba(255,255,255,0.01);
+    }
+    .endpoint-row:hover {
+      border-color: rgba(0,229,255,0.25);
+      background: rgba(0,229,255,0.03);
+      transform: translateX(4px);
+    }
+    .endpoint-row:last-child { margin-bottom: 0; }
+    .method-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+      letter-spacing: 0.05em;
+      min-width: 60px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .method-get {
+      background: rgba(127,255,110,0.12);
+      color: var(--accent2);
+      border: 1px solid rgba(127,255,110,0.2);
+    }
+    .method-post {
+      background: rgba(0,229,255,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,255,0.2);
+    }
+    .method-put {
+      background: rgba(255,183,77,0.12);
+      color: #ffb74d;
+      border: 1px solid rgba(255,183,77,0.2);
+    }
+    .method-delete {
+      background: rgba(255,107,107,0.12);
+      color: var(--accent3);
+      border: 1px solid rgba(255,107,107,0.2);
+    }
+    .endpoint-path {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      flex: 1;
+    }
+    .endpoint-desc {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      flex: 1.5;
+    }
+    .endpoint-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.25rem 0.6rem;
+      background: rgba(127,255,110,0.1);
+      color: var(--accent2);
+      border: 1px solid rgba(127,255,110,0.15);
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    .api-demo-area {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .api-demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .api-demo-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .btn-try-api {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      background: rgba(0,229,255,0.1);
+      border: 1px solid rgba(0,229,255,0.25);
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all .3s;
+    }
+    .btn-try-api:hover {
+      background: rgba(0,229,255,0.2);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,229,255,0.15);
+    }
+    .api-response-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      min-height: 80px;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    .api-response-box pre {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .api-response-box .response-placeholder {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: 7px;
+      height: 14px;
+      background: var(--accent);
+      margin-left: 2px;
+      animation: blink 0.8s step-end infinite;
+      vertical-align: text-bottom;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
     /* ── EDUCATION ── */
-    #education { background: var(--bg); }
+    #education { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .edu-timeline { max-width: 700px; position: relative; }
     .edu-timeline::before {
       content: '';
@@ -632,7 +832,7 @@
 
     /* ── CONTACT ── */
     #contact {
-      background: var(--surface);
+      background: var(--bg);
       border-top: 1px solid var(--border);
       text-align: center;
     }
@@ -758,7 +958,7 @@
     .marquee-track {
       display: flex;
       gap: 3rem;
-      animation: marquee 25s linear infinite;
+      animation: marquee 30s linear infinite;
       width: max-content;
     }
     .marquee-item {
@@ -784,6 +984,9 @@
     }
 
     /* Responsive */
+    @media (max-width: 1100px) {
+      .skills-categories { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       nav { padding: 1rem 2rem; }
       section { padding: 5rem 2rem; }
@@ -794,6 +997,9 @@
       .hero-stats { display: none; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
       .nav-links { display: none; }
+      .endpoint-desc { display: none; }
+      .endpoint-row { gap: 0.6rem; }
+      .skill-bars { display: grid; grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -803,10 +1009,11 @@
   <div id="cursor-ring"></div>
 
   <!-- Floating code snippets -->
-  <div class="floating-code" style="left:85%;animation-delay:-5s;animation-duration:18s">const dev = () => &#x7B; return "frontend" &#x7D;;</div>
-  <div class="floating-code" style="left:5%;animation-delay:-12s;animation-duration:22s">&lt;React.StrictMode&gt;</div>
-  <div class="floating-code" style="left:60%;animation-delay:-8s;animation-duration:16s">display: flex;</div>
-  <div class="floating-code" style="left:20%;animation-delay:-3s;animation-duration:20s">useState(&#x22;naveen&#x22;)</div>
+  <div class="floating-code" style="left:85%;animation-delay:-5s;animation-duration:18s">const stack = () =&gt; &#x7B; return "MERN" &#x7D;;</div>
+  <div class="floating-code" style="left:5%;animation-delay:-12s;animation-duration:22s">mongoose.connect(&#x22;mongodb://&#x22;)</div>
+  <div class="floating-code" style="left:60%;animation-delay:-8s;animation-duration:16s">app.listen(3000)</div>
+  <div class="floating-code" style="left:20%;animation-delay:-3s;animation-duration:20s">router.get(&#x22;/api/users&#x22;)</div>
+  <div class="floating-code" style="left:42%;animation-delay:-15s;animation-duration:24s">&lt;React.StrictMode&gt;</div>
 
   <!-- NAV -->
   <nav>
@@ -815,6 +1022,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#apis">APIs</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -836,7 +1044,7 @@
         <span class="name-line name-accent" data-text="Myana">Myana</span>
       </h1>
       <p class="hero-tagline">
-        Frontend Developer crafting <span>pixel-perfect</span>, responsive web experiences with React & modern CSS. Based in <span>Hyderabad, India</span>.
+        MERN Stack Developer | Full-Stack Developer building <span>end-to-end</span> web applications with MongoDB, Express.js, React &amp; Node.js. Based in <span>Hyderabad, India</span>.
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn-primary">
@@ -856,7 +1064,7 @@
         <div class="stat-label">Graduating</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">5+</div>
+        <div class="stat-num">10+</div>
         <div class="stat-label">Tech skills</div>
       </div>
       <div class="stat-item">
@@ -875,23 +1083,31 @@
   <div class="marquee-wrapper">
     <div class="marquee-track">
       <span class="marquee-item">React</span>
+      <span class="marquee-item">Node.js</span>
+      <span class="marquee-item">Express.js</span>
+      <span class="marquee-item">MongoDB</span>
+      <span class="marquee-item">JavaScript</span>
+      <span class="marquee-item">REST APIs</span>
+      <span class="marquee-item">JWT Auth</span>
       <span class="marquee-item">HTML5</span>
       <span class="marquee-item">CSS3</span>
-      <span class="marquee-item">JavaScript</span>
       <span class="marquee-item">Tailwind CSS</span>
       <span class="marquee-item">Bootstrap</span>
-      <span class="marquee-item">Material UI</span>
       <span class="marquee-item">Git</span>
       <span class="marquee-item">GitHub Pages</span>
       <span class="marquee-item">VS Code</span>
       <!-- duplicate for seamless loop -->
       <span class="marquee-item">React</span>
+      <span class="marquee-item">Node.js</span>
+      <span class="marquee-item">Express.js</span>
+      <span class="marquee-item">MongoDB</span>
+      <span class="marquee-item">JavaScript</span>
+      <span class="marquee-item">REST APIs</span>
+      <span class="marquee-item">JWT Auth</span>
       <span class="marquee-item">HTML5</span>
       <span class="marquee-item">CSS3</span>
-      <span class="marquee-item">JavaScript</span>
       <span class="marquee-item">Tailwind CSS</span>
       <span class="marquee-item">Bootstrap</span>
-      <span class="marquee-item">Material UI</span>
       <span class="marquee-item">Git</span>
       <span class="marquee-item">GitHub Pages</span>
       <span class="marquee-item">VS Code</span>
@@ -903,15 +1119,15 @@
     <div class="about-grid reveal">
       <div class="about-text">
         <div class="section-label">About me</div>
-        <h2 class="section-title">Turning ideas<br/>into interfaces</h2>
+        <h2 class="section-title">Turning ideas into<br/>full-stack applications</h2>
         <p>
-          I'm a <strong>Frontend Developer</strong> and final-year B.Tech student at St. Mary's Engineering College, Hyderabad, specializing in building responsive, user-friendly web applications.
+          I'm a <strong>MERN Stack Developer</strong> and final-year B.Tech student at St. Mary's Engineering College, Hyderabad, passionate about building end-to-end web applications using <strong>MongoDB, Express.js, React, and Node.js</strong>.
         </p>
         <p>
-          Passionate about <strong>UI development</strong> and problem-solving, I thrive on translating design concepts into clean, performant code using modern tools like React, Tailwind, and more.
+          I specialize in crafting <strong>full-stack solutions</strong> — from designing responsive, pixel-perfect frontends to architecting robust RESTful APIs, implementing JWT-based authentication, and managing NoSQL databases. I'm constantly exploring new patterns in backend architecture and API design.
         </p>
         <p>
-          When I'm not coding, you'll find me exploring the internet for the latest in tech, capturing moments through photography, or travelling to new places.
+          Currently seeking <strong>SDE Trainee</strong> roles where I can contribute to building scalable web applications while continuing to grow as a full-stack developer. When I'm not coding, you'll find me exploring the latest in tech, capturing moments through photography, or travelling to new places.
         </p>
       </div>
       <div class="about-visual reveal reveal-delay-1">
@@ -931,14 +1147,14 @@
           <div class="info-card-value">EN · HI · TE</div>
         </div>
         <div class="info-card">
-          <div class="info-card-icon">📸</div>
-          <div class="info-card-label">Hobbies</div>
-          <div class="info-card-value">Photography · Travel</div>
+          <div class="info-card-icon">⚡</div>
+          <div class="info-card-label">Stack</div>
+          <div class="info-card-value">MERN Full-Stack</div>
         </div>
         <div class="info-card span2">
           <div class="info-card-icon">💼</div>
           <div class="info-card-label">Status</div>
-          <div class="info-card-value">Open to SDE Trainee / Internship roles</div>
+          <div class="info-card-value">Open to SDE Trainee / Full-Stack Developer roles</div>
         </div>
       </div>
     </div>
@@ -961,6 +1177,24 @@
           </div>
         </div>
         <div class="skill-category reveal reveal-delay-1">
+          <div class="skill-cat-title">Backend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">JWT Auth</span>
+          </div>
+        </div>
+        <div class="skill-category reveal reveal-delay-2">
+          <div class="skill-cat-title">Database & Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Mongoose</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
+        </div>
+        <div class="skill-category reveal reveal-delay-3">
           <div class="skill-cat-title">Frameworks & UI</div>
           <div class="skill-tags">
             <span class="skill-tag">Tailwind CSS</span>
@@ -968,34 +1202,34 @@
             <span class="skill-tag">Material UI</span>
           </div>
         </div>
-        <div class="skill-category reveal reveal-delay-2">
-          <div class="skill-cat-title">Tools & Soft Skills</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">MS Excel</span>
-            <span class="skill-tag">Leadership</span>
-            <span class="skill-tag">Communication</span>
-          </div>
-        </div>
       </div>
 
-      <div class="skill-bars reveal" style="margin-top:3.5rem; max-width:600px;">
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">HTML & CSS</span><span class="skill-bar-pct">90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.90"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-pct">78%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.78"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">React</span><span class="skill-bar-pct">75%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.75"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span class="skill-bar-name">Tailwind / Bootstrap</span><span class="skill-bar-pct">82%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.82"></div></div>
+      <div class="skill-bars reveal" style="margin-top:3.5rem; max-width:700px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 3rem;">
+          <div class="skill-bar-item">
+            <div class="skill-bar-header"><span class="skill-bar-name">React</span><span class="skill-bar-pct">80%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.80"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header"><span class="skill-bar-name">Node.js</span><span class="skill-bar-pct">72%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.72"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header"><span class="skill-bar-name">HTML & CSS</span><span class="skill-bar-pct">90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header"><span class="skill-bar-name">Express.js</span><span class="skill-bar-pct">75%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.75"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-pct">82%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.82"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header"><span class="skill-bar-name">MongoDB</span><span class="skill-bar-pct">70%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="0.70"></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1006,18 +1240,28 @@
     <div class="section-label">Projects</div>
     <h2 class="section-title">Things I've built</h2>
     <div class="projects-grid">
+
+      <!-- Project 1: E-Commerce (Featured) -->
       <div class="project-card project-featured reveal" id="proj1">
         <div class="project-num">01 — Featured Project</div>
-        <div class="project-title">Personal Portfolio Website</div>
+        <div class="project-title">ShopNest — E-Commerce Platform</div>
         <div class="project-desc">
-          Designed and developed a fully responsive personal portfolio website to showcase projects, technical skills, and contact information. Emphasis on clean UI, smooth navigation, and accessibility. Deployed via GitHub Pages for instant public access.
+          A full-featured MERN stack e-commerce platform with secure user authentication, product catalog with search &amp; filtering, shopping cart with checkout flow, and an admin dashboard for managing products and orders.
         </div>
+        <ul class="project-features">
+          <li>JWT-based authentication with role-based access control</li>
+          <li>Product search, category filters &amp; pagination</li>
+          <li>Shopping cart with persistent state via localStorage</li>
+          <li>Admin panel: CRUD operations for products &amp; order tracking</li>
+          <li>Responsive design with mobile-first approach</li>
+        </ul>
         <div class="project-tech">
-          <span class="tech-pill">HTML5</span>
-          <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">JavaScript</span>
           <span class="tech-pill">React</span>
-          <span class="tech-pill">GitHub Pages</span>
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">Express.js</span>
+          <span class="tech-pill">MongoDB</span>
+          <span class="tech-pill">JWT</span>
+          <span class="tech-pill">Stripe API</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Naveendot55" target="_blank" class="project-link">
@@ -1030,40 +1274,132 @@
           </a>
         </div>
       </div>
+
+      <!-- Project 2: Task Management -->
       <div class="project-card reveal reveal-delay-1">
-        <div class="project-num">02 — UI Component</div>
-        <div class="project-title">Responsive Landing Page</div>
+        <div class="project-num">02 — Full-Stack App</div>
+        <div class="project-title">TaskFlow — Real-Time Task Manager</div>
         <div class="project-desc">
-          Built a modern, mobile-first landing page with smooth animations and a clean design system using Tailwind CSS. Focused on conversion-centered layout and performance.
+          A collaborative task management system with drag-and-drop Kanban boards, real-time updates via Socket.io, and role-based access control for team workspaces.
         </div>
+        <ul class="project-features">
+          <li>Drag-and-drop task boards (Todo → In Progress → Done)</li>
+          <li>Real-time collaboration with Socket.io</li>
+          <li>User authentication &amp; team invitations</li>
+          <li>Task filtering by priority, assignee &amp; due date</li>
+        </ul>
         <div class="project-tech">
           <span class="tech-pill">React</span>
-          <span class="tech-pill">Tailwind CSS</span>
-          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">Express.js</span>
+          <span class="tech-pill">MongoDB</span>
+          <span class="tech-pill">Socket.io</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Naveendot55" target="_blank" class="project-link">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
+          </a>
+          <a href="https://naveendot55.github.io" target="_blank" class="project-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
           </a>
         </div>
       </div>
+
+      <!-- Project 3: Blog Platform -->
       <div class="project-card reveal reveal-delay-2">
-        <div class="project-num">03 — Practice Project</div>
-        <div class="project-title">Interactive UI Components</div>
+        <div class="project-num">03 — Content Platform</div>
+        <div class="project-title">DevBlog — Blog with Admin Dashboard</div>
         <div class="project-desc">
-          Collection of reusable React components — modals, dropdowns, carousels — built with attention to accessibility, keyboard navigation, and smooth transitions using CSS and JS.
+          A full-stack blogging platform with Markdown editor, admin dashboard featuring analytics, user comments with moderation, and SEO-friendly URL slugs.
         </div>
+        <ul class="project-features">
+          <li>Rich Markdown editor with live preview</li>
+          <li>Admin dashboard with post analytics &amp; charts</li>
+          <li>Comment system with moderation tools</li>
+          <li>SEO-optimized slugs &amp; meta tags</li>
+        </ul>
         <div class="project-tech">
           <span class="tech-pill">React</span>
-          <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">Material UI</span>
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">Express.js</span>
+          <span class="tech-pill">MongoDB</span>
+          <span class="tech-pill">Markdown-it</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/Naveendot55" target="_blank" class="project-link">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
+          <a href="https://naveendot55.github.io" target="_blank" class="project-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BACKEND APIs -->
+  <section id="apis">
+    <div class="api-container">
+      <div class="section-label">Backend APIs</div>
+      <h2 class="section-title">REST endpoints I've built</h2>
+
+      <div class="api-terminal reveal">
+        <div class="api-terminal-header">
+          <div class="terminal-dot red"></div>
+          <div class="terminal-dot yellow"></div>
+          <div class="terminal-dot green"></div>
+          <span class="api-terminal-title">api-server — localhost:3000</span>
+        </div>
+
+        <div class="api-endpoints">
+          <div class="endpoint-row" data-endpoint="get-products" onclick="tryEndpoint('get-products')">
+            <span class="method-badge method-get">GET</span>
+            <span class="endpoint-path">/api/products</span>
+            <span class="endpoint-desc">Fetch all products with pagination &amp; filters</span>
+            <span class="endpoint-status">200 OK</span>
+          </div>
+          <div class="endpoint-row" data-endpoint="post-register" onclick="tryEndpoint('post-register')">
+            <span class="method-badge method-post">POST</span>
+            <span class="endpoint-path">/api/auth/register</span>
+            <span class="endpoint-desc">Register a new user with hashed password</span>
+            <span class="endpoint-status">201 Created</span>
+          </div>
+          <div class="endpoint-row" data-endpoint="put-task" onclick="tryEndpoint('put-task')">
+            <span class="method-badge method-put">PUT</span>
+            <span class="endpoint-path">/api/tasks/:id</span>
+            <span class="endpoint-desc">Update task status, priority &amp; assignee</span>
+            <span class="endpoint-status">200 OK</span>
+          </div>
+          <div class="endpoint-row" data-endpoint="delete-post" onclick="tryEndpoint('delete-post')">
+            <span class="method-badge method-delete">DELETE</span>
+            <span class="endpoint-path">/api/posts/:id</span>
+            <span class="endpoint-desc">Delete a blog post (admin only)</span>
+            <span class="endpoint-status">204 No Content</span>
+          </div>
+          <div class="endpoint-row" data-endpoint="post-login" onclick="tryEndpoint('post-login')">
+            <span class="method-badge method-post">POST</span>
+            <span class="endpoint-path">/api/auth/login</span>
+            <span class="endpoint-desc">Authenticate user &amp; return JWT token</span>
+            <span class="endpoint-status">200 OK</span>
+          </div>
+        </div>
+
+        <div class="api-demo-area">
+          <div class="api-demo-header">
+            <span class="api-demo-label">⚡ Response Preview</span>
+            <button class="btn-try-api" onclick="tryEndpoint('get-products')">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Try GET /api/products
+            </button>
+          </div>
+          <div class="api-response-box" id="apiResponseBox">
+            <span class="response-placeholder">// Click an endpoint or "Try" button to see a mock response...</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1101,7 +1437,7 @@
       <div class="section-label">Contact</div>
       <h2 class="section-title">Let's work together</h2>
       <p class="contact-tagline">
-        I'm actively looking for <strong>SDE Trainee</strong> and <strong>Frontend Internship</strong> opportunities. If you think I'd be a good fit for your team, I'd love to hear from you.
+        I'm actively looking for <strong>SDE Trainee</strong> and <strong>Full-Stack Developer</strong> opportunities. If you're building something exciting with the MERN stack and think I'd be a great fit, I'd love to hear from you.
       </p>
       <a href="mailto:naveenmyana555@gmail.com" class="contact-email-big">naveenmyana555@gmail.com</a>
       <div class="contact-links">
@@ -1123,12 +1459,155 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-copy">© 2024 Naveen Myana. All rights reserved.</div>
+    <div class="footer-copy">© 2025 Naveen Myana. All rights reserved.</div>
     <div class="footer-made">Built with <span>♥</span> &amp; lots of caffeine</div>
   </footer>
 
   <script>
-    // Custom cursor
+    // ── MOCK API DATA ──
+    const mockResponses = {
+      'get-products': {
+        label: 'GET /api/products',
+        data: `{
+  "success": true,
+  "count": 3,
+  "pagination": { "page": 1, "limit": 10, "total": 42 },
+  "data": [
+    {
+      "_id": "64a1b2c3d4e5f6a7b8c9d0e1",
+      "name": "Wireless Bluetooth Headphones",
+      "price": 2499,
+      "category": "Electronics",
+      "rating": 4.5,
+      "inStock": true
+    },
+    {
+      "_id": "64a1b2c3d4e5f6a7b8c9d0e2",
+      "name": "Mechanical Keyboard RGB",
+      "price": 3999,
+      "category": "Accessories",
+      "rating": 4.8,
+      "inStock": true
+    },
+    {
+      "_id": "64a1b2c3d4e5f6a7b8c9d0e3",
+      "name": "USB-C Hub 7-in-1",
+      "price": 1299,
+      "category": "Accessories",
+      "rating": 4.2,
+      "inStock": false
+    }
+  ]
+}`
+      },
+      'post-register': {
+        label: 'POST /api/auth/register',
+        data: `{
+  "success": true,
+  "message": "User registered successfully",
+  "data": {
+    "_id": "64b2c3d4e5f6a7b8c9d0e1f2",
+    "name": "Naveen Myana",
+    "email": "naveenmyana555@gmail.com",
+    "role": "user",
+    "createdAt": "2025-06-11T12:00:00.000Z"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}`
+      },
+      'put-task': {
+        label: 'PUT /api/tasks/:id',
+        data: `{
+  "success": true,
+  "message": "Task updated successfully",
+  "data": {
+    "_id": "64c3d4e5f6a7b8c9d0e1f2a3",
+    "title": "Implement JWT Authentication",
+    "status": "in-progress",
+    "priority": "high",
+    "assignee": {
+      "name": "Naveen Myana",
+      "avatar": "/avatars/naveen.png"
+    },
+    "dueDate": "2025-06-15T00:00:00.000Z",
+    "updatedAt": "2025-06-11T14:30:00.000Z"
+  }
+}`
+      },
+      'delete-post': {
+        label: 'DELETE /api/posts/:id',
+        data: `{
+  "success": true,
+  "message": "Blog post deleted successfully",
+  "data": {
+    "_id": "64d4e5f6a7b8c9d0e1f2a3b4",
+    "title": "Getting Started with MERN Stack",
+    "slug": "getting-started-with-mern-stack",
+    "deletedAt": "2025-06-11T15:00:00.000Z",
+    "deletedBy": "admin"
+  }
+}`
+      },
+      'post-login': {
+        label: 'POST /api/auth/login',
+        data: `{
+  "success": true,
+  "message": "Login successful",
+  "data": {
+    "_id": "64b2c3d4e5f6a7b8c9d0e1f2",
+    "name": "Naveen Myana",
+    "email": "naveenmyana555@gmail.com",
+    "role": "admin"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjJjM2Q0ZTVmNmE3YjhjOWQwZTFmMiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxODEwMjQwMCwiZXhwIjoxNzE4MTg4ODAwfQ.mock_signature_here",
+  "expiresIn": "24h"
+}`
+      }
+    };
+
+    // ── TYPING ANIMATION FOR API RESPONSE ──
+    let typingTimeout = null;
+    function tryEndpoint(endpointId) {
+      const box = document.getElementById('apiResponseBox');
+      const response = mockResponses[endpointId];
+      if (!response) return;
+
+      // Clear previous
+      if (typingTimeout) clearTimeout(typingTimeout);
+      box.innerHTML = '<pre></pre><span class="typing-cursor"></span>';
+      const pre = box.querySelector('pre');
+      const text = response.data;
+      let i = 0;
+      const speed = 4; // ms per character
+
+      // Highlight active endpoint row
+      document.querySelectorAll('.endpoint-row').forEach(r => {
+        r.style.borderColor = '';
+        r.style.background = '';
+      });
+      const activeRow = document.querySelector(`[data-endpoint="${endpointId}"]`);
+      if (activeRow) {
+        activeRow.style.borderColor = 'rgba(0,229,255,0.4)';
+        activeRow.style.background = 'rgba(0,229,255,0.06)';
+      }
+
+      function type() {
+        if (i < text.length) {
+          const chunk = text.substring(0, i + 3); // type 3 chars at a time for speed
+          pre.textContent = chunk;
+          i += 3;
+          box.scrollTop = box.scrollHeight;
+          typingTimeout = setTimeout(type, speed);
+        } else {
+          pre.textContent = text;
+          const cursor = box.querySelector('.typing-cursor');
+          if (cursor) cursor.remove();
+        }
+      }
+      type();
+    }
+
+    // ── CUSTOM CURSOR ──
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
     let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1183,7 +1662,7 @@
     bars.forEach(b => barObserver.observe(b));
 
     // Cursor scale on hover
-    document.querySelectorAll('a, button, .skill-tag, .project-card, .info-card').forEach(el => {
+    document.querySelectorAll('a, button, .skill-tag, .project-card, .info-card, .endpoint-row, .btn-try-api').forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursor.style.width = '20px';
         cursor.style.height = '20px';
