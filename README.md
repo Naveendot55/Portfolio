@@ -14,8 +14,10 @@ Clean UI — Modern, minimal, and user-friendly interface
 🛠️ Tech Stack
 Frontend: HTML5, CSS3, JavaScript
 Styling: CSS Flexbox / Grid (responsive layout)
-Deployment: Vercel
+Deployment: Vercel,Github Pages
 🚀 Live Demo
+Live : https://naveendot55.github.io/Portfolio/
+
 Check out the live version: naveendoddi.vercel.app
 
 📂 Project Structure
