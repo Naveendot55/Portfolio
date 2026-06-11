@@ -16,9 +16,8 @@ Frontend: HTML5, CSS3, JavaScript
 Styling: CSS Flexbox / Grid (responsive layout)
 Deployment: Vercel,Github Pages
 🚀 Live Demo
-Live : https://naveendot55.github.io/Portfolio/
 
-Check out the live version: naveendoddi.vercel.app
+Check out the live version: https://naveendot55.github.io/Portfolio/
 
 📂 Project Structure
 Portfolio/
